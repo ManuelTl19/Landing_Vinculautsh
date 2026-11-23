@@ -1,7 +1,9 @@
-import qr from '../assets/qr.png'
+import {appService} from '../services/appServices'
 import Reveal from './Reveal'
 
 function CTA() {
+  const qrUrl = appService.obtenerQr();
+  
   return (
     <Reveal className="container cta" id="download">
       <div className="cta__panel">
@@ -16,7 +18,7 @@ function CTA() {
           </a>
         </div>
         <div className="cta__qr-card">
-          <img className="cta__qr" src={qr} alt="Código QR de muestra, pendiente de enlazar a la descarga" />
+          <img className="cta__qr" src={qrUrl} alt="Código QR de muestra, pendiente de enlazar a la descarga" />
           <p>Escanea para descargar</p>
         </div>
       </div>
